@@ -13,7 +13,7 @@ module.exports = {
     login: async (body) => {
       try{
         console.log(body);
-        let userCheck = await userModel.findOne({ email: body.email, password: body.password })
+        let userCheck = await userModel.findOne({ email: body.email, password: body.password }).lean()
        
         console.log(userCheck)
         if (!userCheck) {

@@ -12,7 +12,8 @@ var validitycheckingfun=function(req,res,next){
 
 }
 router.get('/home',validitycheckingfun,(req,res)=>{
-  res.render("user/home",{user:true});
+  console.log(req.session.user1)
+  res.render("user/home2");
 })
 
 router.get('/', function(req, res, next) {
@@ -35,7 +36,8 @@ router.post('/userlogin', async function(req, res, next) {
     if (!user.status) {
         console.log("loginfail")
     }else{
-        req.session.userse=user._id;
+      console.log(user)
+        req.session.user1=user._id;
         req.session.userlogin=true
         res.render("user/home",{user:true})
 
@@ -56,18 +58,22 @@ router.post('/usersignup', async function(req, res, next) {
 
 });
 
-router.get("/regform",(req,res)=>{
+router.get("/regform",validitycheckingfun,(req,res)=>{
   res.render("user/getPickupdetails")
 })
-router.get('/home', function(req, res, next) {
-  res.render('user/home',{user:true});
-  console.log("Home Request");
-});
+
 
 router.get('/wallet', function(req, res, next) {
   res.render('user/wallet', {user:true});
   console.log("wallet Request");
 });
+router.post('/pickupdetails',async function(req,res){
+  console.log(req.session.userse)
+  console.log(req.session.userlogin)
+
+  let response = await userhelper.savePickupDetails({...req.body,userId:req.session.userse})
+  res.json(response)
+})
 
 
 module.exports = router;
