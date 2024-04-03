@@ -15,6 +15,9 @@ router.post('/login', async function(req, res, next) {
         res.send("Login Success")
     }
 });
+router.get('/login',(req,res)=>{
+  
+})
 
 module.exports = router;
 
