@@ -1,2 +1,88 @@
-<!--navbars allangil common ayt vendathokke ivda ittoo userpageil  -->
-    <h1>hello</h1>
+<style>
+    
+    .pfp{
+        width: 3rem;
+        border-radius: 15rem;
+    }
+
+    nav{
+        display: flex;
+        background-color: rgb(255, 255, 255)  ;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        margin-bottom: 3rem;
+  
+    }
+
+
+
+    .user_details{
+        display: flex;  
+        flex-direction: column;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 0.8rem;
+        color: rgb(69, 69, 69);
+    }
+
+    .navbar-toggler{
+        height: 3rem;
+        width: 3rem;
+        display: flex;
+        align-items: center ;
+    }
+    .navbar-toggler span{
+        font-size: large;
+    }
+</style>
+{{!-- 
+<nav>
+    <div class="left">
+    <div class="pfp">
+        <img src="https://avatars.githubusercontent.com/u/93857690?v=4" alt="   ">
+
+    <div class="user_details">
+        <div class="u_name">Naveen</div>
+        <div class="u_name">Keezhoor,Kottayam</div>
+    </div>
+        </div>  
+    </div>
+    <div class="right">
+        <div class="donate">Donate</div>    
+        <div class="about">about</div>
+    </div>
+</nav> --}}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-light " >
+  <a class="navbar-brand" href="#" style="display: flex;  "><img class="pfp" src="https://avatars.githubusercontent.com/u/93857690?v=4" alt="">
+     <div class="user_details" style="margin-left:1rem">
+    <div class="u_name">Naveen</div>
+    <div class="u_name" >Keezhoor,Kottayam</div>
+    </div></a>
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav navbar-nav ml-auto ">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Donate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"></a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -32,7 +32,7 @@ router.post('/usersignup', async function(req, res, next) {
 });
 
 router.get('/home', function(req, res, next) {
-  res.render('user/home');
+  res.render('user/home', {user:true});
   console.log("Home Request");
 });
 

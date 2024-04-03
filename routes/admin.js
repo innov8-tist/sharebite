@@ -8,5 +8,10 @@ router.get('/', function(req, res, next) {
     })
 });
 
+router.get('/dash', function(req, res, next) {
+    res.render('admin/admindash', {admincommonfun: true});
+    console.log("Admin Request");
+  });
+
 
 module.exports = router;
