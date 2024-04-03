@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>nocodedb</title>
+     <!--bodyk venda css link okke ivde load chyam  -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+ {{#if admincommonfun}}
+   {{>admincommonfun}}
+   {{{body}}}
+ {{else}}
+   {{>usercommonfun}}
+   {{{body}}}
+ {{/if}}
+  </body>
+
+  <!--bodyk venda style scripts okke ivde load chyam  -->
+</html>
