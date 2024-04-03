@@ -26,6 +26,10 @@ router.get('/signup', function(req, res, next) {
   console.log("signup Request");
 });
 
+router.get('/home', function(req, res, next) {
+  res.render('user/home');
+  console.log("Home Request");
+});
 
 
 module.exports = router;

@@ -1,0 +1,93 @@
+<style>
+    ** {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    }
+    content{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 ;
+        margin: 0;
+    }
+
+
+    .card{
+        margin: 1rem 1rem;
+        background-color: rgb(6, 207, 10);
+        height: 26rem;
+        width: 30%;
+        border-radius: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column  ;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        transition: all 500ms;
+
+    }
+    span{
+        font-size: 3rem;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        text-decoration: underline;
+    }
+
+    .text{
+        margin-top: 0.7rem ;
+        text-align: center;
+        width: 80%;
+        color: white;
+        font-family: "Poppins", sans-serif;
+    }
+    button{
+        width: 8rem;
+        height: 3rem;
+        margin-top: 2rem;
+        background-color: white;
+        border-radius: 2rem;
+        border:none;
+        color:rgb(51, 51, 51);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;        
+    }
+    button:hover{
+        animation: zoom 1s ease-out 2ms 500ms normal forwards;
+
+    }
+    @keyframes zoom{
+        0%{
+            transform: scale(1);
+        }50%{
+            filter:blur(8px);
+        }100%{
+            transform: scale(1.05);
+            filter:blur(0px);
+        }
+  
+    }
+
+    .card:hover{
+        background:rgb(7, 222, 11);
+        transform: scale(1.03);
+    }
+
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<content>
+    <div class="card" style="">
+        <span>JOIN US</span>
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quaerat rerum fugiat qui. Delectus</div> 
+        <button>Click Me</button>
+    </div>
+    <div class="card"></div>
+
+
+</content>
