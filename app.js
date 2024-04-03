@@ -26,7 +26,7 @@ var handlebarsInstance = hbs.create({
     }
 });
 app.engine('hbs', handlebarsInstance.engine);
-app.use(session({secret:"key",cookie:{maxAge:600000}}))
+app.use(session({secret:"key",cookie:{maxAge:300000}}))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
