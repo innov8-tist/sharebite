@@ -17,7 +17,7 @@ router.get('/admincall1',(req,res)=>{
 
    })
  })
-
+ 
 router.get('/dash', function(req, res, next) {
     res.render('admin/admindash', {admincommonfun: true});
     console.log("Admin Request");
