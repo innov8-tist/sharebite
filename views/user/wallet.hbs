@@ -1,52 +1,67 @@
 <style>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
 
+*{
+    padding: 0;
+    margin: 0;
+}
+
 body {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+    
+    padding: 0;
+    margin: 0;
+  -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+                               
 }
 
 
 .container {
   display: flex;
   justify-content: center;
+  
 }
 
 .iphone {
+  border-radius: 1rem;
   background-color: #F7F7F7;
   margin: 10px;
-  height: 812px;
-  width: 375px;
+  height: 30rem;
+  width: 50rem;
   box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   position: relative;
   transform: scale(0.9);
   transform-origin: top center;
+  display: flex;
+  justify-content: center   ;
 }
 
 .header {
-  height: 30%;
-  background-color: #44B0A0;
-  border-bottom-right-radius: 40px;
+    height: 30%;
+    background: -webkit-linear-gradient(to right, rgba(5, 255, 51, 0.700), rgba(55, 255, 0, 0.700));
+	    background: linear-gradient(to right, rgba(26, 255, 0, 0.700), rgba(13, 255, 0, 0.700));
+    border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-   overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;   
+    width: 100%;
 }
 
 .header::before{
   content:"";
   height: 200px;
   width: 200px;
-  background-color: #53b5a8;
+      background: -webkit-linear-gradient(to right, #06ff33, #37ff1d);
+    background: linear-gradient(to right, #18ff08, #0cff04);
   border-radius: 50%;
   position:absolute;
   top: -60px;
@@ -58,7 +73,8 @@ body {
   content:"";
   height: 100px;
   width: 100px;
-  background-color: #53b5a8;
+      background: -webkit-linear-gradient(to right, #06ff33, #37ff1d);
+    background: linear-gradient(to right, #18ff08, #0cff04);
   border-radius: 50%;
   position:absolute;
   right: -20px;
@@ -94,7 +110,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .user-profile {
-  margin-top: 4rem;
+    margin-top: 2rem;
   height: 70px;
   width: 70px;
   align-self: flex-start;
@@ -193,144 +209,7 @@ font-family: 'Montserrat', sans-serif;
   color: #939393;
 }
 
-.transactions {
-  font-family: 'Montserrat', sans-serif;
-  display: flex;
-  position: relative;
-  margin-top: 1.5rem;
-  flex-direction: column;
-}
 
-.t-desc {
-  font-size: 0.8rem;
-  font-weight: bold;
-  padding-bottom: 10px;
-}
-
-.transaction {
-  cursor: default;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color:white;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.02), 0 10px 10px rgba(0,0,0,0.0);
-  border-radius: 12px;
-  margin-bottom:20px;
-}
-
-.t-details {
-  width: 55%;
-}
-
-.t-icon-container {
-  width: 45px;
-  align-self: flex-start;
-}
-
-.t-icon {
-  width: 100%;
-  border-radius: 50%;
-  box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.2);
-}
-
-.t-title {
-  text-align: left;
-  flex-grow: 1;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.t-time {
-  font-size: 0.6rem;
-  opacity: 0.6;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-.t-amount {
-  font-size: 0.6rem;
-  letter-spacing: 1px;
-  font-weight: 400;
-  color: #06D778;
-}
-
-.red {
-  color: #F4532D;
-}
-
-.drawer {
-  display:flex;
-  background-color: white;
-  height:80px;
-  position:absolute;
-  bottom: 0px;
-  width: 100%;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  z-index: 5;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-
-.drawer span {
-  display: inline-block;
-  font-size: 1.5rem;
-  color: #FFC168;
-  transition: all 0.4s;
-  cursor: pointer;
-}
-
-.drawer span i:hover {
-  transform: scale(1.2);
-  border-bottom: 2px solid orange;
-}
-
-.drawer span i {
-  transition: all 0.3s ease;
-  padding-bottom: 8px;
-}
-
-
-
-.menu-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  background-color: #FFC168;
-  color: white;
-  top: -25px;
-  position: absolute;
-  transform: rotate(-45deg);
-  border-radius: 10px;
-  box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: all 0.1s;
-  opacity: 0.9;
-}
-
-.menu-btn:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-.menu-btn i{
-  font-size: 1.5em;
-  transform: rotate(45deg);
-  
-}
-
-.footer {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.transaction:hover {
-    box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(0, 0, 0, 0.15);
-}
 </style>
 <body>
   <div class="container">
@@ -343,12 +222,9 @@ font-family: 'Montserrat', sans-serif;
           <div class="summary-balance">
             &#8377; 293.00
           </div>
-          <div class="summary-text-2">
-            +&nbsp;280.00
-          </div>
         </div>
         <div class="user-profile">
-          <img src="https://pbs.twimg.com/profile_images/1089189690773712897/bCJr7IzK_400x400.jpg" class="user-photo">
+          <img src="https://avatars.githubusercontent.com/u/93857690?v=4" style="paddin-left: 1rem ;" class="user-photo">
         </div>
       </div>
       <div class="content">
@@ -382,52 +258,10 @@ font-family: 'Montserrat', sans-serif;
             </div>
           </div>
         </div>
-        <div class="transactions"><span class="t-desc">Recent Transactions</span>
-          <div class="transaction">
-            <div class="t-icon-container"><img src="https://99designs.ca/og-image.png?utm_source=google&utm_medium=cpc&utm_network=g&utm_creative=323294316363&utm_term=99designs&utm_placement=&utm_device=c&utm_campaign=CA%20-%2099designs%20Branded&utm_content=99designs%20-%20exact&gclid=Cj0KCQjw4qvlBRDiARIsAHme6ouhXyscC85e3wUS5loKQ1rgpHSs2IyrD4Z_DwuWQLNXgClEeEebi48aAujREALw_wcB"
-                class="t-icon"></div>
-            <div class="t-details">
-              <div class="t-title">99 designs</div>
-              <div class="t-time">03.45PM
-              </div>
-            </div>
-            <div class="t-amount">+&nbsp;750&#8377;
-            </div>
-          </div>
-
-          <div class="transaction">
-            <div class="t-icon-container"><img src="https://www.paypalobjects.com/webstatic/icon/pp144.png" class="t-icon"></div>
-            <div class="t-details">
-              <div class="t-title">Paypal </div>
-              <div class="t-time">03.45 AM
-              </div>
-            </div>
-            <div class="t-amount">+&nbsp;200&#8377;
-            </div>
-          </div>
-
-          <div class="transaction">
-            <div class="t-icon-container"><img src="https://cdn.dribbble.com/assets/dribbble-ball-192-ec064e49e6f63d9a5fa911518781bee0c90688d052a038f8876ef0824f65eaf2.png" class="t-icon"></div>
-            <div class="t-details">
-              <div class="t-title">99 designs</div>
-              <div class="t-time">08.00PM
-              </div>
-            </div>
-            <div class="t-amount red">-&nbsp;120&#8377;
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="drawer">
-        <span><i class="fal fa-home"></i></span>
-        <span><i class="fal fa-chart-bar"></i></span>
-        <div class="menu-btn"><i class="fal fa-plus"></i></div>
-        <span><!---to evenly space icons---></span>
-        <span><i class="fal fa-sticky-note"></i> </span>
-        <span><i class="fal fa-user"></i> </span>
+        
       </div>
 
     </div>
   </div>
-  <div class="footer">made with ❤️ by <a href="https://www.twitter.com/surendharnagraj" target="_blank">Surendhar Nagarajan</a><br><small>-- based on dribble by <a href="https://surendharnagarajan.tk/" target="_blank">Surendhar Nagarajan</a></small></div>
+  
 </body>
