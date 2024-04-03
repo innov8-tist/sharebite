@@ -17,13 +17,18 @@ router.get('/admincall1',(req,res)=>{
 
    })
  })
+<<<<<<< HEAD
+
+=======
  
 router.get('/dash', function(req, res, next) {
     res.render('admin/admindash', {admincommonfun: true});
     console.log("Admin Request");
   });
+>>>>>>> e7edecc1d00cd2cc4b158c06caf9959f6d9f2eb2
 
-router.get('/dashbord1', async function(req, res, next) {
+
+  router.get('/dash',async function(req, res, next) {
     let data2 = await adminhelper.getAlllPickups();
 
 
@@ -39,7 +44,7 @@ let formattedData = data2.map(item => {
     };
 });
 
-    res.render('admin/dashbord1',{formattedData});
+    res.render('admin/admindash',{formattedData});
   });
 
 
