@@ -1,370 +1,111 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-:root {
-	--c-gray-900: #000000;
-	--c-gray-800: #1f1f1f;
-	--c-gray-700: #2e2e2e;
-	--c-gray-600: #313131;
-	--c-gray-500: #969593;
-	--c-gray-400: #a6a6a6;
-	--c-gray-300: #bdbbb7;
-	--c-gray-200: #f1f1f1;
-	--c-gray-100: #ffffff;
-
-	--c-green-500: #45ffbc;
-	--c-olive-500: #e3ffa8;
-
-	--c-white: var(--c-gray-100);
-
-	--c-text-primary: var(--c-gray-100);
-	--c-text-secondary: var(--c-gray-200);
-	--c-text-tertiary: var(--c-gray-500);
-}
-
-body {
-	line-height: 1.5;
-	min-height: 100vh;
-	font-family: "Be Vietnam Pro", sans-serif;
-	background-color: white;
-	color: var(--c-text-primary);
-	display: flex;
-	padding-top: 3vw;
-	padding-bottom: 3vw;
-	justify-content: center;
-}
-
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-
-img {
-	display: block;
-	max-width: 100%;
-}
-
-button,
-select,
-input,
-textarea {
-	font: inherit;
-}
-
-a {
-	color: inherit;
-}
-
-.responsive-wrapper {
-	width: 90%;
-	max-width: 1600px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.app {
-    background: -webkit-linear-gradient(to right, rgba(5, 255, 51, 0.700), rgba(55, 255, 0, 0.700));
-	    background: linear-gradient(to right, rgba(26, 255, 0, 0.700), rgba(13, 255, 0, 0.700));
-	min-height: 80vh;
-	width: 95%;
-	max-width: 1600px;
-	background-color: rgb(227, 227, 227);
-	padding: 2vw 4vw 6vw;
-	display: flex;
-	flex-direction: column;
-    border-radius: 1rem;
-}
-
-.app-header {
-    display: flex;
-    justify-content: space-between;
-	align-items: flex-end;
-	@media (max-width: 1200px) {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		border-bottom: 1px solid var(--c-gray-600);
+	.details td{
+    padding: 10px 10px;
 	}
-}
+	.location {
+		padding: 10px;
+		border-radius: 10px;
+		background-color: yellow;
 
-.app-header-navigation {
-	@media (max-width: 1200px) {
-		display: none;
 	}
-}
-
-.app-header-actions {
-	display: flex;
-	align-items: center;
-	@media (max-width: 1200px) {
-		display: none;
-	}
-}
-
-.app-header-actions-buttons {
-	display: flex;
-	border-left: 1px solid var(--c-gray-600);
-	margin-left: 2rem;
-	padding-left: 2rem;
-
-	& > * + * {
-		margin-left: 1rem;
-	}
-}
-
-.app-header-mobile {
-	display: none;
-	@media (max-width: 1200px) {
-		display: flex;
-	}
-}
-
-.app-body {
-	height: 100%;
-	display: grid;
-	grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(
-			min-content,
-			400px
-		);
-
-	column-gap: 4rem;
-	padding-top: 2.5rem;
-
-	@media (max-width: 1200px) {
-		grid-template-columns: 1fr;
-		& > * {
-			margin-bottom: 3.5rem;
-		}
-	}
-}
-
-.app-body-navigation {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	@media (max-width: 1200px) {
-		display: none;
-	}
-}
-
-.app-body-sidebar {
-}
-
-.footer {
-	margin-top: auto;
-	h1 {
-		font-size: 1.5rem;
-		line-height: 1.125;
-		display: flex;
-		align-items: flex-start;
-		small {
-			font-size: 0.5em;
-			margin-left: 0.25em;
-		}
-	}
-
-	div {
-		border-top: 1px solid var(--c-gray-600);
-		margin-top: 1.5rem;
-		padding-top: 1rem;
-		font-size: 0.75rem;
-		color: var(--c-text-tertiary);
-	}
-}
-
-.logo {
-	display: flex;
-	align-items: center;
-	padding-bottom: 1rem;
-	padding-top: 1rem;
-	border-bottom: 1px solid var(--c-gray-600);
-	@media (max-width: 1200px) {
-		border-bottom: 0;
-	}
-}
-
-.logo-icon {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 32px;
-	height: 32px;
-}
-
-.logo-title {
-	display: flex;
-	flex-direction: column;
-	line-height: 1.25;
-	margin-left: 0.75rem;
-	span:first-child {  
-		color: var(--c-text-primary);
-	}
-	span:last-child {
-		color: var(--c-text-tertiary);
-	}
-}
-
-.navigation {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	color: white;
-    border-right:1px solid var(--c-gray-600);
-    font-size: 1.2rem   ;
-	a {
-		display: flex;
-		align-items: center;
-		text-decoration: none;
-		transition: 0.25s ease;
-
-		* {
-			transition: 0.25s ease;
-		}
-
-		i {
-			margin-right: 0.75rem;
-			font-size: 1.25em;
-			flex-shrink: 0;
-		}
-
-		& + a {
-			margin-top: 1.25rem;
-		}
-
-		&:hover,
-		&:focus {
-			transform: translateX(4px);
-			color: var(--c-text-primary);
-		}
-	}
-}
-
-.tabs {
-	display: flex;
-	justify-content: space-between;
-	color: var(--c-text-tertiary);
-	border-bottom: 1px solid var(--c-gray-600);
-
-	a {
-		padding-top: 1rem;
-		padding-bottom: 1rem;
-		text-decoration: none;
-		border-top: 2px solid transparent;
-		display: inline-flex;
-		transition: 0.25s ease;
-		&.active,
-		&:hover,
-		&:focus {
-			color: var(--c-text-primary);
-			border-color: var(--c-text-primary);
-		}
-	}
-}
-
-.user-profile {
-	display: flex;
-	align-items: center;
-	border: 0;
-	background: transparent;
-	cursor: pointer;
-	color: var(--c-text-tertiary);
-	transition: 0.25s ease;
-
-	&:hover,
-	&:focus {
-		color: var(--c-text-primary);
-		span:last-child {
-			box-shadow: 0 0 0 4px var(--c-gray-800), 0 0 0 5px var(--c-text-tertiary);
-		}
-	}
-
-	span:first-child {
-		display: flex;
-		font-size: 1.125rem;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
-		border-bottom: 1px solid var(--c-gray-600);
-		font-weight: 300;
-	}
-
-	span:last-child {
-		transition: 0.25s ease;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 42px;
-		height: 42px;
-		border-radius: 50%;
-		overflow: hidden;
-		margin-left: 1.5rem;
-		flex-shrink: 0;
-	}
-}
-
-
-
-
 </style>
-
-<div class="app">
-	<header class="app-header">
-		<div class="app-header-logo">
-			<div class="logo">
-				<span class="logo-icon">
-					<img src="https://assets.codepen.io/285131/almeria-logo.svg" />
-				</span>
-				<h1 class="logo-title">
-					<span>Innov8</span>
-					<span>Donate</span>
-				</h1>
-			</div>
-		</div>
-		<div class="app-header-navigation">
-			<div class="tabs">
-				
-			</div>
-		</div>
-		<div class="app-header-actions">
-
-		</div>
-		<div class="app-header-mobile">
-			<button class="icon-button large">
-				<i class="ph-list"></i>
-			</button>
-		</div>
-
-	</header>
-	<div class="app-body">
-		<div class="app-body-navigation">
-			<nav class="navigation">
-				<a href="/admin/dashbord1">
+<div class="grid h-screen min-h-screen w-full lg:grid-cols-[280px_1fr]">
+	<div class="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
+		<div class="flex h-full max-h-screen flex-col gap-2">
+			<div class="flex h-[60px] items-center border-b px-6"><a class="flex items-center gap-2 font-semibold"
+					href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+						fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+						stroke-linejoin="round" class="h-6 w-6">
+						<path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
+						<path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
+						<path d="M12 3v6"></path>
+					</svg><span class="">Innov8</span></a><button
+					class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground ml-auto h-8 w-8"><svg
+						xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+						class="h-4 w-4">
+						<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+						<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+					</svg><span class="sr-only">Toggle notifications</span></button></div>
+			<nav class="grid items-start px-4 text-sm font-medium"><a
+					class="flex items-center gap-3 rounded-lg bg-gray-100 px-3 py-2 text-gray-900  transition-all hover:text-gray-900 dark:bg-gray-800 dark:text-gray-50 dark:hover:text-gray-50"
+					href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+						fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+						stroke-linejoin="round" class="h-4 w-4">
+						<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+						<polyline points="9 22 9 12 15 12 15 22"></polyline>
+					</svg>
 					Dashbord
-				</a>
-				<a href="#">
-					<i class="ph-check-square"></i>
-					<span>Scheduled</span>
-				</a>
-				<a href="#">
-					<i class="ph-swap"></i>
-					<span>Transfers</span>
-				</a>
-				<a href="#">
-					<i class="ph-file-text"></i>
-					<span>Templates</span>
-				</a>
-				<a href="#">
-					<i class="ph-globe"></i>
-					<span>SWIFT</span>
-				</a>
-				<a href="#">
-					<i class="ph-clipboard-text"></i>
-					<span>Exchange</span>
-				</a>
-			</nav>
-
+				</a></nav>
 		</div>
-		<div class="app-body-main-content">
-			
+	</div>
+	<div class="flex flex-col">
+		<header class="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40"><a
+				class="lg:hidden" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+					viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+					stroke-linejoin="round" class="h-6 w-6">
+					<path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
+					<path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
+					<path d="M12 3v6"></path>
+				</svg><span class="sr-only">Home</span></a>
+			<div class="w-full flex-1">
+				<form>
+					<div class="relative"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+							viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round"
+							class="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500 dark:text-gray-400">
+							<circle cx="11" cy="11" r="8"></circle>
+							<path d="m21 21-4.3-4.3"></path>
+						</svg><input
+							class="flex h-10 rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full bg-white shadow-none appearance-none pl-8 md:w-2/3 lg:w-1/3 dark:bg-gray-950"
+							placeholder="Search products..." type="search"></div>
+				</form>
+			</div>
+		</header>
+		<main class="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6">
+			<div class="flex items-center">
+				<h1 class="font-semibold text-lg md:text-2xl">Delivery Request</h1><button
+					class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 ml-auto">
+					
+				</button>
+			</div>
+			<div class="border shadow-sm rounded-lg">
+    <div class="relative w-full overflow-auto">
+        <table class="w-full caption-bottom text-sm" style="text-align: center; padding-left: 5px;">
+            <thead class="[&amp;_tr]:border-b">
+                <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <th
+                        class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 w-[80px] text-center">
+                        Name</th>
+                    <th
+                        class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 max-w-[150px] text-center">
+                        Phone</th>
+                    <th
+                        class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 hidden md:table-cell text-center">
+							Meals</th>
+                    <th
+                        class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 hidden md:table-cell text-center">
+                        Location
+                    </th>
+                    
+
+                </tr>
+            </thead>
+            {{#each formattedData}}
+            <tr class="text-center details">
+                <td hidden style="font-size: 0.8rem;">{{this.orderId}}</td>
+                <td>{{this.time}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.meal}}</td>
+                <td> <a class="location" href="/admin/track/{{this.orderId}}">location</a></td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>
+
+		</main>
 	</div>
 </div>
