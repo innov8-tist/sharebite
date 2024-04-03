@@ -7,6 +7,17 @@ router.get('/', function(req, res, next) {
   console.log("request reevie")
 });
 
+router.get('/login', function(req, res, next) {
+  res.render('user/login');
+  console.log("Login Request");
+});
+
+router.get('/signup', function(req, res, next) {
+  res.render('user/signup');
+  console.log("signup Request");
+});
+
+
 
 module.exports = router;
 
