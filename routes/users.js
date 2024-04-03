@@ -12,7 +12,7 @@ var validitycheckingfun=function(req,res,next){
 
 }
 router.get('/home',validitycheckingfun,(req,res)=>{
-  res.render("user/home2");
+  res.render("user/home",{user:true});
 })
 
 router.get('/', function(req, res, next) {
@@ -37,7 +37,7 @@ router.post('/userlogin', async function(req, res, next) {
     }else{
         req.session.userse=user._id;
         req.session.userlogin=true
-        res.render("user/home")
+        res.render("user/home",{user:true})
 
         console.log("loginned");
     }
@@ -60,7 +60,7 @@ router.get("/regform",(req,res)=>{
   res.render("user/getPickupdetails")
 })
 router.get('/home', function(req, res, next) {
-  res.render('user/home', {user:true});
+  res.render('user/home',{user:true});
   console.log("Home Request");
 });
 
