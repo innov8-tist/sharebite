@@ -11,7 +11,7 @@ var validitycheckingfun=function(req,res,next){
   }
 
 }
-router.get('/home',(req,res)=>{
+router.get('/home',validitycheckingfun,(req,res)=>{
   res.render("user/home");
 })
 
@@ -24,8 +24,8 @@ router.get('/', function(req, res, next) {
     req.session.loginfail=false;
     console.log("false going")
     res.render('user/login',{loginfail:false});
-   
   }
+
 
 });
 
@@ -38,17 +38,21 @@ router.post('/userlogin',async function(req, res, next) {
         res.redirect("/")
     }else{
         req.session.userse=user._id;
+        req.session.userlogin=true
         res.render("user/home")
+
         console.log("loginned");
     }
 });
+
 
 router.post('/usersignup',async function(req, res, next) {
  await  userhelper.signup(req.body).then((data)=>{
   console.log("heeeeyyyy")
     console.log(data)
-  req.session.userse=data._id;
+    req.session.userlogin=true
 
+     console.log("home calling  11111111")
    res.redirect('/home')
    })
 
