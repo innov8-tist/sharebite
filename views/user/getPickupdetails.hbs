@@ -30,19 +30,19 @@
             return Obj
         }
 
-        window.addEventListener("load", function () {
+        window.addEventListener("load", function() {
 
             document.getElementById("form").addEventListener("submit", async function (e) {
-                e.preventDefault();
+                e.preventDefault();                
 
                 if (lat == 0 && longs == 0) {
                     window.alert("Please wait while we are finding your co-ordinates")
                     return
                 }
-                let data = ExtractKeys(e.target, ["time", "phone"])
-                data.coords = { latitude: lat, longitude: longs }
-                console.log(data)
-
+                let data = ExtractKeys(e.target, ["time", "phone","meal"])
+                data.lattitude = lat
+                data.longitude = longs
+                
                 const rawResponse = await fetch('/pickupdetails', {
                     method: 'POST',
                     headers: {
@@ -116,10 +116,10 @@
 
                                 <div class="col-12 col-md-6">
                                     <label for="phone" class="form-label">Meal type</label>
-                                    <select class="form-select form-select-sm mb-3"
+                                    <select name="meal" class="form-select form-select-sm mb-3"
                                         aria-label=".form-select-lg example">
-                                        <option value="1">Veg</option>
-                                        <option selected="selected" value="2">Non veg</option>
+                                        <option value="veg">Veg</option>
+                                        <option selected="selected" value="nonveg">Non veg</option>
                                     </select>
 
                                 </div>

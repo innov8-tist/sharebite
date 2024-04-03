@@ -60,13 +60,11 @@ router.post('/usersignup',async function(req, res, next) {
 
 router.get("/regform",(req,res)=>{
   res.render("user/getPickupdetails")
-})<<<<<<< HEAD
+})
 router.get('/home', function(req, res, next) {
   res.render('user/home', {user:true});
   console.log("Home Request");
 });
-=======
->>>>>>> 5e0073ac0cf15727cf99649cfdabd7893410d506
 
 router.get('/pickupdetails', async function(req, res) {
     res.render('user/getPickupdetails');

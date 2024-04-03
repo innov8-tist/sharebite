@@ -34,4 +34,7 @@ router.get('/foodpickups',async function(req,res){
 })
  
 
+router.get('/track', function(req, res, next) {
+  res.render('admin/track', {admincommonfun: true});
+});
 module.exports = router;
