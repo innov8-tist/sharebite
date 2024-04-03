@@ -59,6 +59,14 @@ router.post('/usersignup',async function(req, res, next) {
 });
 
 
+router.get('/pickupdetails', async function(req, res) {
+    res.render('user/getPickupdetails');
+})
+
+router.post('/pickupdetails',async function(req,res){
+  let response = await userhelper.savePickupDetails(req.body)
+  res.json(response)
+})
 
 module.exports = router;
 

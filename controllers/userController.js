@@ -1,3 +1,4 @@
+const { foodPickupModel } = require("../models/foodPickupModel");
 const { userModel } = require("../models/userModel")
 
 module.exports = {
@@ -10,7 +11,8 @@ module.exports = {
         })
    },
     login: async (body) => {
-       console.log(body);
+      try{
+        console.log(body);
         let userCheck = await userModel.findOne({ email: body.email, password: body.password })
        
         console.log(userCheck)
@@ -18,6 +20,12 @@ module.exports = {
             return { status: false, }
         }
         return { ...userCheck, status: true }
+      }catch(err){
+        console.log(err)
+      }
     },
-    
+    savePickupDetails: async (body)=>{
+        let response = await new foodPickupModel(body).save()
+        return response
+    }
 }
