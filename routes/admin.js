@@ -17,6 +17,16 @@ router.get('/admincall1',(req,res)=>{
 
    })
  })
+
+ router.get('/foodpickups',async function(req,res){
+    let data2 = await adminhelper.getAlllPickups();
+    console.log(data2)
+    let newdata=data2.map((data)=>{
+        return data
+    })
+    console.log(newdata);
+    res.render('admin/foodpickups',{newdata})
+})
  
 
 module.exports = router;
