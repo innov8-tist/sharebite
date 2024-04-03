@@ -12,7 +12,7 @@ var validitycheckingfun=function(req,res,next){
 
 }
 router.get('/home',validitycheckingfun,(req,res)=>{
-  res.render("user/home");
+  res.render("user/home2");
 })
 
 router.get('/', function(req, res, next) {

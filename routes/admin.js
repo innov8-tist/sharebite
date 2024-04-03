@@ -11,9 +11,9 @@ router.get('/admincall',(req,res)=>{
 })
 router.get('/admincall1',(req,res)=>{
    adminhelper.googleapi('96dd7725-d12c-4902-a7c0-916e02e04e54').then((data)=>{
-    let latitude=data.coords.latitude
-    let longitude=data.coords.longitude
-     res.render("admin/map",{latitude,longitude})
+   // let latitude=data.coords.latitude
+   // let longitude=data.coords.longitude
+     res.render("admin/map")
 
    })
  })
@@ -23,15 +23,30 @@ router.get('/dash', function(req, res, next) {
     console.log("Admin Request");
   });
 
-router.get('/foodpickups',async function(req,res){
+router.get('/dashbord1', async function(req, res, next) {
     let data2 = await adminhelper.getAlllPickups();
     console.log(data2)
-    let newdata=data2.map((data)=>{
-        return data
-    })
-    console.log(newdata);
-    res.render('admin/foodpickups',{newdata})
-})
+
+
+// Create a new array containing the necessary data for rendering
+let formattedData = data2.map(item => {
+    return {
+        orderId: item._id,
+        time: item.time,
+        phone: item.phone,
+        latitude: item.latitude,
+        longitude: item.longitude,
+        meal: item.meal
+    };
+});
+
+
+
+    res.render('admin/dashbord1',{formattedData});
+
+  });
+
+
  
 
 router.get('/track', function(req, res, next) {
