@@ -1,29 +1,34 @@
 var express = require('express');
 var router = express.Router();
-const { login } = require('../controllers/userController.js');
+const  userhelper  = require('../controllers/userController.js');
 
 router.get('/', function(req, res, next) {
     console.log("request reevie")
     res.render('user/samples');
 });
 
-router.post('/login', async function(req, res, next) {
-    let user = await login(req.body)
+router.post('/userlogin', async function(req, res, next) {
+  console.log(req.body)
+   let user = await userhelper.login(req.body)
     if (!user.status) {
-        res.send("Login failed")
+        console.log("loginfail")
     }else{
-        res.send("Login Success")
+        console.log("loginned");
     }
+
+
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('user/login');
-  console.log("Login Request");
+  res.render('user/login')
 });
 
-router.get('/signup', function(req, res, next) {
-  res.render('user/signup');
-  console.log("signup Request");
+router.post('/usersignup', async function(req, res, next) {
+ await  userhelper.signup(req.body).then((data)=>{
+    console.log(data);
+    console.log("successsfully completed");
+   })
+
 });
 
 
