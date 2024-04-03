@@ -14,5 +14,13 @@ module.exports = {
             let details= await foodPickupModel.findOne({_id:delivery_id})
             resolve(details)
         })
+    },
+    getPickUpData:async function(id){
+        try{
+            let data = await foodPickupModel.findOne({_id:id})
+            return data
+        }catch(err){
+            console.log(err)
+        }
     }
 }

@@ -25,7 +25,6 @@ router.get('/dash', function(req, res, next) {
 
 router.get('/dashbord1', async function(req, res, next) {
     let data2 = await adminhelper.getAlllPickups();
-    console.log(data2)
 
 
 // Create a new array containing the necessary data for rendering
@@ -40,16 +39,16 @@ let formattedData = data2.map(item => {
     };
 });
 
-
-
     res.render('admin/dashbord1',{formattedData});
-
   });
 
 
  
 
-router.get('/track', function(req, res, next) {
-  res.render('admin/track', {admincommonfun: true});
+router.get('/track/:id', async function(req, res, next) {
+  console.log(req.params.id)
+  let data = await adminhelper.getPickUpData(req.params.id)
+  console.log(data)
+  res.render('admin/track', {admincommonfun: true,latitude:data.lattitude,longitude:data.longitude});
 });
 module.exports = router;
