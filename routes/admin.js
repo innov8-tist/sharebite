@@ -15,5 +15,8 @@ router.get('/foodpickups',async function(req,res){
     let data2 = await adminhelper.getAlllPickups();
     res.render('admin/foodpickups',{data2:data2})
 })
-2
+
+router.get('/track', function(req, res, next) {
+  res.render('admin/track', {admincommonfun: true});
+});
 module.exports = router;
