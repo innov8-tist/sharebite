@@ -38,6 +38,7 @@ router.post('/userlogin', async function(req, res, next) {
     }else{
       console.log(user)
         req.session.user1=user._id;
+        console.log(req.session.user1)
         req.session.userlogin=true
         res.render("user/home",{user:true})
 
@@ -68,10 +69,10 @@ router.get('/wallet', function(req, res, next) {
   console.log("wallet Request");
 });
 router.post('/pickupdetails',async function(req,res){
-  console.log(req.session.userse)
-  console.log(req.session.userlogin)
+  console.log(req.session.user1);
+  console.log(req.session.user1);
 
-  let response = await userhelper.savePickupDetails({...req.body,userId:req.session.userse})
+  let response = await userhelper.savePickupDetails({...req.body,userId:req.session.user1})
   res.json(response)
 })
 

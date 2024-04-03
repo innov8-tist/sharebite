@@ -10,6 +10,7 @@
 		background-color: yellow;
 
 	}
+	
 </style>
 <div class="grid h-screen min-h-screen w-full lg:grid-cols-[280px_1fr]">
 	<div class="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
@@ -100,6 +101,7 @@
                 <td>{{this.phone}}</td>
                 <td>{{this.meal}}</td>
                 <td> <a class="location" href="/admin/track/{{this.orderId}}">location</a></td>
+				<td><a class="location2" href="/admin/picked/{{this.orderId}}">OrderPicked</a></td>
             </tr>
             {{/each}}
         </table>
