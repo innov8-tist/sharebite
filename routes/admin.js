@@ -22,22 +22,45 @@ router.get('/admincall1',(req,res)=>{
 
 
   router.get('/dash',async function(req, res, next) {
-    let data2 = await adminhelper.getAlllPickups();
+    if(req.session.status=="orderconfimed"){
+      let data2 = await adminhelper.getAlllPickups();
 
 
-// Create a new array containing the necessary data for rendering
-let formattedData = data2.map(item => {
-    return {
-        orderId: item._id,
-        time: item.time,
-        phone: item.phone,
-        latitude: item.latitude,
-        longitude: item.longitude,
-        meal: item.meal
-    };
-});
+      // Create a new array containing the necessary data for rendering
+      let formattedData = data2.map(item => {
+          return {
+              orderId: item._id,
+              time: item.time,
+              phone: item.phone,
+              latitude: item.latitude,
+              longitude: item.longitude,
+              meal: item.meal
+          };
+      });
+      
+          res.render('admin/admindash',{formattedData,statuschanged:true});
 
-    res.render('admin/admindash',{formattedData});
+    }else{
+      let data2 = await adminhelper.getAlllPickups();
+
+
+      // Create a new array containing the necessary data for rendering
+      let formattedData = data2.map(item => {
+          return {
+              orderId: item._id,
+              time: item.time,
+              phone: item.phone,
+              latitude: item.latitude,
+              longitude: item.longitude,
+              meal: item.meal,
+              username:item.username
+        
+          };
+      });
+      
+          res.render('admin/admindash',{formattedData});
+    }
+   
   });
 
 
@@ -49,4 +72,19 @@ router.get('/track/:id', async function(req, res, next) {
   console.log(data)
   res.render('admin/track', {admincommonfun: true,latitude:data.lattitude,longitude:data.longitude});
 });
+
+router.post("/picked",(async(req,res)=>{
+  console.log(req.body)
+  
+  let statusdata=await adminhelper.Updatestatus(req.body.id,req.body.value);
+
+
+
+
+
+
+}))
+
+
+
 module.exports = router;
