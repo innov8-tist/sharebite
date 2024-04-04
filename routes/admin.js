@@ -47,22 +47,24 @@ router.get('/dash', async function (req, res, next) {
     let data2 = await adminhelper.getAlllPickups();
 
 
-    // Create a new array containing the necessary data for rendering
-    let formattedData = data2.map(item => {
-      return {
-        orderId: item._id,
-        time: item.time,
-        phone: item.phone,
-        latitude: item.latitude,
-        longitude: item.longitude,
-        meal: item.meal
-      };
-    });
-
-    res.render('admin/admindash', { formattedData });
-  }
-
-});
+      // Create a new array containing the necessary data for rendering
+      let formattedData = data2.map(item => {
+          return {
+              orderId: item._id,
+              time: item.time,
+              phone: item.phone,
+              latitude: item.latitude,
+              longitude: item.longitude,
+              meal: item.meal,
+              username:item.username
+        
+          };
+      });
+      
+          res.render('admin/admindash',{formattedData});
+    }
+   
+  });
 
 
 
