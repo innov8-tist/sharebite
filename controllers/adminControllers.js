@@ -53,4 +53,20 @@ module.exports = {
             {$set:{status:value}})
             return data2
     },
+    adminvalidation:((body)=>{
+        return new Promise((resolve,reject)=>{
+            if(body.email=="surajpa@gmail.com"){
+                if(body.password=="suraj"){
+                   let status=true;
+                   resolve(status)
+                }else{
+                    let status =false
+                    resolve(status)
+                }
+            }else{
+                let status =false
+                resolve(status)
+            }
+        })
+    })
 }
