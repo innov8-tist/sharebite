@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var adminhelper = require("../controllers/adminControllers")
-const accountSid = 'ACeedd2bff7688961ebebae472001146cc';
-const authToken = '7a481df6900a98da2abd45c7425289ca';
-const client = require('twilio')(accountSid, authToken);
+ require("dotenv").config()
+
+const client = require('twilio')(process.env.accountSid, process.env.authToken);
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   res.render("admin/oops", { admincommonfun: true });

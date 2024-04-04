@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const  userhelper  = require('../controllers/userController.js');
-const accountSid = 'ACeedd2bff7688961ebebae472001146cc';
-const authToken = '7a481df6900a98da2abd45c7425289ca';
-const client = require('twilio')(accountSid, authToken);
+
 
 var validitycheckingfun=function(req,res,next){
   if(req.session.userlogin){
@@ -77,6 +75,7 @@ router.post('/pickupdetails',async function(req,res){
   let response = await userhelper.savePickupDetails({...req.body,userId:req.session.user1})
   res.json(response)
 })
+
 
 
 module.exports = router;
