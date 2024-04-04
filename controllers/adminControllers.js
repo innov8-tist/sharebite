@@ -22,5 +22,10 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
-    }
+    },
+    Updatestatus:async function(id,value){
+        let data2 =await foodPickupModel.updateOne({_id:id},
+            {$set:{status:value}})
+            return data2
+    },
 }

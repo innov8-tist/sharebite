@@ -7,7 +7,8 @@ const foodPickupSchema = new mongoose.Schema({
     phone:{type:String,required:true},
     lattitude:{type:String,required:true},
     longitude:{type:String,required:true},
-    meal:{type:String,required:true}
+    meal:{type:String,required:true},
+    status:{type:String,default:"pending",required:true}
 })
 
 

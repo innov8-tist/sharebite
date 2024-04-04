@@ -2,13 +2,18 @@
 
 <style>
 	.details td{
-    padding: 10px 10px;
+    padding: 15px 15px;
 	}
 	.location {
 		padding: 10px;
 		border-radius: 10px;
 		background-color: yellow;
 
+	}
+	.location2{
+		padding: 10px;
+		border-radius: 10px;
+		background-color: red;
 	}
 	
 </style>
@@ -90,19 +95,33 @@
                         class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 hidden md:table-cell text-center">
                         Location
                     </th>
+					<th
+                        class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0 hidden md:table-cell text-center">
+                        Status
+                    </th>
                     
 
                 </tr>
             </thead>
             {{#each formattedData}}
+			
             <tr class="text-center details">
                 <td hidden style="font-size: 0.8rem;">{{this.orderId}}</td>
                 <td>{{this.time}}</td>
                 <td>{{this.phone}}</td>
                 <td>{{this.meal}}</td>
                 <td> <a class="location" href="/admin/track/{{this.orderId}}">location</a></td>
-				<td><a class="location2" href="/admin/picked/{{this.orderId}}">OrderPicked</a></td>
+				<td>  <select id="{{this.orderId}}" name="statusupdate" class="form-select form-select-sm mb-3"
+                                        aria-label=".form-select-lg example">
+                                        <option value="cancel">cancel</option>
+										<option value="pending">pending</option>
+                                        <option selected="selected" value="orderpick">orderpick</option>
+                                    </select></td>
+				<td  > <button onclick="myfunction('{{this.orderId}}')" class="location" type="submit"> update </button> </td>
+
+				
             </tr>
+
             {{/each}}
         </table>
     </div>
@@ -111,3 +130,23 @@
 		</main>
 	</div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+  function myfunction(id){
+		console.log(id)
+		 let e = document.getElementById(id);
+    var value = e.value;
+    console.log(value)
+$.ajax({
+    url: "/admin/picked",
+    data: { id: id, value: value },
+    method: "post",
+    success: (response) => {
+        alert("updated Sucessfully")
+        location.reload()
+    }
+});
+
+	}
+</script>
