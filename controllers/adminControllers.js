@@ -58,14 +58,15 @@ module.exports = {
             if(body.email=="surajpa@gmail.com"){
                 if(body.password=="suraj"){
                    let status=true;
-                   resolve(status)
+                   resolve({status})
                 }else{
                     let status =false
-                    resolve(status)
+                    resolve({status})
                 }
             }else{
                 let status =false
-                resolve(status)
+                console.log("status");
+                resolve({status})
             }
         })
     })

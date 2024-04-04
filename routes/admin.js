@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var adminhelper = require("../controllers/adminControllers")
+var adminhelper = require("../controllers/adminControllers");
+const { route } = require('./users');
  require("dotenv").config()
 const  accountSid = 'ACeedd2bff7688961ebebae472001146cc';
 const authToken = '2e5ab47d591d382a65b5455cb887d576';
@@ -58,9 +59,16 @@ router.get('/admincall1', (req, res) => {
 })
 
 
-
-
-
+router.post('/adminlogin1', async function (req, res, next) {
+   console.log(req.body)
+   let result= await adminhelper.adminvalidation(req.body)
+   console.log(result);
+   if(result.status==false){
+    res.redirect("/admin/adminlogin")
+   }else{
+    res.redirect("/admin")
+   }
+});
 
 router.get('/track/:id', async function (req, res, next) {
   console.log(req.params.id)
@@ -94,6 +102,11 @@ router.post("/picked", (async (req, res) => {
     
   }
 }))
+
+router.get("/adminlogin",((req,res)=>{
+  res.render("admin/adminlogin")
+}))
+
 
 
 
