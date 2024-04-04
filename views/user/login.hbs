@@ -48,8 +48,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #00ff2f;
-	background-color: #0eff36;
+	border: 1px solid white	;
+	background: linear-gradient(180.2deg, rgb(30, 33, 48) 6.8%, rgb(74, 98, 110) 131%);
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -163,8 +163,7 @@ input {
 
 .overlay {
 	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #06ff33, #37ff1d);
-	background: linear-gradient(to right, #18ff08, #0cff04);
+	background: radial-gradient(circle at 10% 20%, rgb(69, 86, 102) 0%, rgb(34, 34, 34) 90%);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -245,7 +244,8 @@ footer p {
 }
 
 footer i {
-    color: rgb(0, 255, 17);
+    color:linear-gradient(to right, #434343 0%, black 100%);
+;
 }
 
 footer a {
@@ -266,7 +266,7 @@ footer a {
 			<input required name="password" type="password" placeholder="Password" />
 			<button>Sign Up</button>
 		</form>
-	</div>
+	</div>	
 	<div class="form-container sign-in-container">
 		<form action="/userlogin" method="post">
 			<h1>Sign in</h1>
@@ -275,7 +275,7 @@ footer a {
 			<input name="password" type="password" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
              <p style="color: red;">Check your password or email</p>
-			<button>Sign In</button>
+			<button style="width=2rem;height=2rem;">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
