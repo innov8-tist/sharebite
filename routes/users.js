@@ -11,10 +11,7 @@ var validitycheckingfun=function(req,res,next){
   }
 
 }
-router.get('/home',validitycheckingfun,(req,res)=>{
-  console.log(req.session.user1)
-  res.render("user/home2");
-})
+
 
 router.get('/', function(req, res, next) {
   if(req.session.loginfail){
@@ -29,6 +26,10 @@ router.get('/', function(req, res, next) {
 
 
 });
+router.get('/home',validitycheckingfun,(req,res)=>{
+  console.log(req.session.user1)
+  res.render("user/home2");
+})
 
 router.post('/userlogin', async function(req, res, next) {
   console.log(req.body)
@@ -41,7 +42,7 @@ router.post('/userlogin', async function(req, res, next) {
         console.log(req.session.user1)
         req.session.userlogin=true
         res.render("user/home",{user:true})
-
+        
         console.log("loginned");
     }
 });
