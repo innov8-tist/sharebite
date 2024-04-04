@@ -7,7 +7,7 @@ const hbs = require("express-handlebars")
 var adminRouter = require('./routes/admin.js');
 var usersRouter = require('./routes/users');
 let { connectDb } = require("./db/mongo.connection.js")
-
+var session =require("express-session");
 var app = express();
 
 // view engine setup
@@ -26,7 +26,7 @@ var handlebarsInstance = hbs.create({
     }
 });
 app.engine('hbs', handlebarsInstance.engine);
-
+app.use(session({secret:"key",cookie:{maxAge:300000}}))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

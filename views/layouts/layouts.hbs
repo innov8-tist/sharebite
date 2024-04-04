@@ -6,13 +6,14 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
- {{#if admincommonfun}}
-   {{>admincommonfun}}
-   {{{body}}}
- {{else}}
-   {{>usercommonfun}}
-   {{{body}}}
+ {{#if admin}}
+   {{> admincommonfun}}
+   {{/if}}
+ {{#if user}}
+   {{> usercommonfun}}
  {{/if}}
+ 
+ {{{body}}}
   </body>
 
   <!--bodyk venda style scripts okke ivde load chyam  -->
